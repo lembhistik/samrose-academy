@@ -60,7 +60,6 @@ const DIVISIONS = [
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
 
   return (
