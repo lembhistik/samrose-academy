@@ -102,13 +102,37 @@ function Home() {
             </nav>
             <a
               href="#admissions"
-              className="shrink-0 rounded-md bg-crimson px-5 py-2.5 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90"
+              className="hidden shrink-0 rounded-md bg-crimson px-5 py-2.5 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90 lg:inline-block"
             >
               Enroll Now
             </a>
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((o) => !o)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-slate-soft lg:hidden"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
+        {menuOpen ? (
+          <nav className="border-t border-border bg-background px-4 pb-4 pt-2 sm:px-6 lg:hidden">
+            {NAV.map((item) => (
+              <a
+                key={item}
+                href="#top"
+                onClick={() => setMenuOpen(false)}
+                className="block border-b border-border/60 py-3 text-sm font-medium text-foreground/85 transition-colors hover:text-crimson"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        ) : null}
       </header>
+
 
       {/* Hero */}
       <section id="top" className="relative isolate overflow-hidden">
