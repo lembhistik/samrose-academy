@@ -76,7 +76,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/70" />
         <div className="relative mx-auto max-w-4xl px-4 py-28 text-center sm:px-6 md:py-40">
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-crimson-foreground/80">
-            Ahenema Kokoben • Ashanti Region
+            Ahenema Kokoben • Kumasi
           </p>
           <h1 className="font-serif text-4xl font-bold leading-[1.05] text-navy-foreground sm:text-6xl md:text-7xl">
             MODELLING GREATNESS
