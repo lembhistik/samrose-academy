@@ -6,17 +6,17 @@ import heroAsset from "@/assets/hero.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Samrose's Academy | Modelling Greatness in Ahenema Kokoben" },
+      { title: "Samroses Academy | Crèche, Kindergarten & Primary Education" },
       {
         name: "description",
         content:
           "Crèche, Kindergarten, Lower & Upper Primary education at Samrose's Academy, Ahenema Kokoben. Holistic academic growth, discipline and creative development.",
       },
-      { property: "og:title", content: "Samrose's Academy | Modelling Greatness" },
+      { property: "og:title", content: "Samroses Academy | Crèche, Kindergarten & Primary Education" },
       {
         property: "og:description",
         content:
-          "Two dedicated campuses in Ahenema Kokoben nurturing excellence from Crèche through Upper Primary.",
+          "Crèche, Kindergarten, Lower & Upper Primary education at Samrose's Academy, Ahenema Kokoben. Holistic academic growth, discipline and creative development.",
       },
     ],
   }),

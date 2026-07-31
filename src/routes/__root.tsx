@@ -77,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Samrose's Academy | Modelling Greatness" },
+      { title: "Samroses Academy | Crèche, Kindergarten & Primary Education" },
       {
         name: "description",
         content:
-          "Samrose's Academy in Ahenema Kokoben: Crèche, Kindergarten and Primary education built on discipline and creative growth.",
+          "Crèche, Kindergarten, Lower & Upper Primary education at Samrose's Academy, Ahenema Kokoben. Holistic academic growth, discipline and creative development.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Samroses Academy | Crèche, Kindergarten & Primary Education" },
+      { name: "twitter:title", content: "Samroses Academy | Crèche, Kindergarten & Primary Education" },
+      { property: "og:description", content: "Crèche, Kindergarten, Lower & Upper Primary education at Samrose's Academy, Ahenema Kokoben. Holistic academic growth, discipline and creative development." },
+      { name: "twitter:description", content: "Crèche, Kindergarten, Lower & Upper Primary education at Samrose's Academy, Ahenema Kokoben. Holistic academic growth, discipline and creative development." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/50b9c650-7902-4097-9e5a-bc47d5456aaf" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/50b9c650-7902-4097-9e5a-bc47d5456aaf" },
     ],
     links: [
       {
