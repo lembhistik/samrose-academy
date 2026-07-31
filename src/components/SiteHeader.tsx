@@ -45,7 +45,7 @@ export function SiteHeader() {
                 <Link
                   key={item.label}
                   to={item.to}
-                  hash={item.hash}
+                  {...(item.hash ? { hash: item.hash } : {})}
                   className="text-sm font-medium text-foreground/80 transition-colors hover:text-crimson"
                 >
                   {item.label}
@@ -76,7 +76,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={item.hash}
+                {...(item.hash ? { hash: item.hash } : {})}
                 onClick={() => setMenuOpen(false)}
                 className="block border-b border-border/60 py-3 text-sm font-medium text-foreground/85 transition-colors hover:text-crimson"
               >
