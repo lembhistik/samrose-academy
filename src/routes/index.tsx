@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
 import heroAsset from "@/assets/hero.asset.json";
 
@@ -58,6 +59,8 @@ const DIVISIONS = [
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
