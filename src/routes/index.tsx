@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/logo.asset.json";
 import heroAsset from "@/assets/hero.asset.json";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,38 +24,39 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const NAV = [
-  "Academics",
-  "Campuses",
-  "Admissions",
-  "Campus Life",
-  "About Us",
-];
-
 const DIVISIONS = [
   {
     name: "Crèche",
+    label: "3 Months – 2 Years",
     accent: "bg-crimson",
     text: "Warm, safe environment for early sensory development and individual care.",
   },
   {
-    name: "Kindergarten",
+    name: "Nursery",
+    label: "Nursery 1–2",
     accent: "bg-navy",
+    text: "Early vocabulary, fine motor coordination and classroom routines before formal school.",
+  },
+  {
+    name: "Kindergarten",
+    label: "KG 1–2",
+    accent: "bg-crimson",
     text: "Play-based learning designed to build confidence, early language, and social skills.",
   },
   {
     name: "Lower Primary",
     label: "Basic 1–3",
-    accent: "bg-crimson",
+    accent: "bg-navy",
     text: "Core literacy, numeracy, critical thinking, and structured learning.",
   },
   {
     name: "Upper Primary",
     label: "Basic 4–6",
-    accent: "bg-navy",
+    accent: "bg-crimson",
     text: "Advanced academic focus, STEM foundation, and leadership preparation.",
   },
 ];
+
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -64,75 +65,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      {/* Announcement */}
-      <div className="bg-navy px-4 py-2.5 text-center text-xs tracking-wide text-navy-foreground sm:text-sm">
-        Admissions Open across Early Grade &amp; Primary Campuses{" "}
-        <span className="text-crimson">|</span> Located at Ahenema Kokoben
-      </div>
-
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-          <a href="#top" className="flex min-w-0 items-center gap-3">
-            <img
-              src={logoAsset.url}
-              alt="Samrose's Academy crest"
-              className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
-            />
-            <span className="min-w-0">
-              <span className="block truncate font-serif text-base font-bold leading-tight tracking-tight sm:text-lg">
-                SAMROSE&apos;S ACADEMY
-              </span>
-              <span className="block truncate text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                Modelling Greatness
-              </span>
-            </span>
-          </a>
-          <div className="flex items-center gap-6">
-            <nav className="hidden items-center gap-6 lg:flex">
-              {NAV.map((item) => (
-                <a
-                  key={item}
-                  href="#top"
-                  className="text-sm font-medium text-foreground/80 transition-colors hover:text-crimson"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-            <a
-              href="#admissions"
-              className="hidden shrink-0 rounded-md bg-crimson px-5 py-2.5 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90 lg:inline-block"
-            >
-              Enroll Now
-            </a>
-            <button
-              type="button"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((o) => !o)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-slate-soft lg:hidden"
-            >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
-        </div>
-        {menuOpen ? (
-          <nav className="border-t border-border bg-background px-4 pb-4 pt-2 sm:px-6 lg:hidden">
-            {NAV.map((item) => (
-              <a
-                key={item}
-                href="#top"
-                onClick={() => setMenuOpen(false)}
-                className="block border-b border-border/60 py-3 text-sm font-medium text-foreground/85 transition-colors hover:text-crimson"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        ) : null}
-      </header>
-
+      <SiteHeader />
 
       {/* Hero */}
       <section id="top" className="relative isolate overflow-hidden">
@@ -183,11 +116,12 @@ function Home() {
             A four-stage learning journey shaped around how children grow.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {DIVISIONS.map((d) => (
-            <article
+            <Link
               key={d.name}
-              className="group overflow-hidden rounded-lg border border-border bg-card shadow-card transition-shadow hover:shadow-elevated"
+              to="/academics"
+              className="group block overflow-hidden rounded-lg border border-border bg-card shadow-card transition-shadow hover:shadow-elevated"
             >
               <div className={`h-1 w-full ${d.accent}`} />
               <div className="p-7">
@@ -198,8 +132,11 @@ function Home() {
                   </p>
                 ) : null}
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{d.text}</p>
+                <span className="mt-5 inline-block text-xs font-semibold uppercase tracking-[0.18em] text-crimson">
+                  View curriculum →
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
@@ -358,65 +295,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-navy text-navy-foreground">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <div className="flex min-w-0 items-center gap-3">
-                <img
-                  src={logoAsset.url}
-                  alt="Samrose's Academy crest"
-                  className="h-14 w-14 shrink-0 rounded-full object-cover"
-                />
-                <span className="font-serif text-lg font-bold leading-tight">
-                  SAMROSE&apos;S
-                  <br />
-                  ACADEMY
-                </span>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-navy-foreground/70">
-                Modelling greatness through holistic academic growth, discipline, and creative
-                development for every child we teach.
-              </p>
-            </div>
-            <FooterCol
-              title="Quick Links"
-              items={["Academics", "Campuses", "Portal", "Admissions"]}
-            />
-            <FooterCol
-              title="Divisions"
-              items={["Crèche", "Kindergarten", "Lower Primary", "Upper Primary"]}
-            />
-            <div>
-              <h3 className="font-serif text-sm font-bold uppercase tracking-[0.2em] text-crimson">
-                Contact
-              </h3>
-              <ul className="mt-5 space-y-3 text-sm text-navy-foreground/75">
-                <li>Ahenema Kokoben, Ashanti Region, Ghana</li>
-                <li>Old Site (Early Grade) | New Site (KG &amp; Primary)</li>
-                <li>
-                  <a
-                    href="mailto:samrosesacademysra@gmail.com"
-                    className="hover:text-crimson-foreground"
-                  >
-                    samrosesacademysra@gmail.com
-                  </a>
-                </li>
-                <li>
-                  Enquiries:{" "}
-                  <a href="tel:0558344599" className="font-semibold hover:text-crimson-foreground">
-                    0558344599
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-navy-foreground/15 py-6 text-center text-xs text-navy-foreground/60">
-          © 2026 SAMROSE&apos;S ACADEMY. All Rights Reserved.
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -440,24 +319,5 @@ function Field({
       </span>
       {children}
     </label>
-  );
-}
-
-function FooterCol({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <h3 className="font-serif text-sm font-bold uppercase tracking-[0.2em] text-crimson">
-        {title}
-      </h3>
-      <ul className="mt-5 space-y-3 text-sm text-navy-foreground/75">
-        {items.map((i) => (
-          <li key={i}>
-            <a href="#top" className="transition-colors hover:text-crimson-foreground">
-              {i}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
