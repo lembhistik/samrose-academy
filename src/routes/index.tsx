@@ -141,7 +141,7 @@ function Home() {
           alt="Pupils in red uniforms on the Samrose's Academy campus grounds"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/70" />
         <div className="relative mx-auto max-w-4xl px-4 py-28 text-center sm:px-6 md:py-40">
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-crimson-foreground/80">
             Ahenema Kokoben • Ashanti Region
