@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
 import heroAsset from "@/assets/hero.asset.json";
 
@@ -58,6 +59,8 @@ const DIVISIONS = [
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
@@ -99,13 +102,37 @@ function Home() {
             </nav>
             <a
               href="#admissions"
-              className="shrink-0 rounded-md bg-crimson px-5 py-2.5 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90"
+              className="hidden shrink-0 rounded-md bg-crimson px-5 py-2.5 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90 lg:inline-block"
             >
               Enroll Now
             </a>
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((o) => !o)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:bg-slate-soft lg:hidden"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
+        {menuOpen ? (
+          <nav className="border-t border-border bg-background px-4 pb-4 pt-2 sm:px-6 lg:hidden">
+            {NAV.map((item) => (
+              <a
+                key={item}
+                href="#top"
+                onClick={() => setMenuOpen(false)}
+                className="block border-b border-border/60 py-3 text-sm font-medium text-foreground/85 transition-colors hover:text-crimson"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        ) : null}
       </header>
+
 
       {/* Hero */}
       <section id="top" className="relative isolate overflow-hidden">
@@ -114,7 +141,7 @@ function Home() {
           alt="Pupils in red uniforms on the Samrose's Academy campus grounds"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/70" />
         <div className="relative mx-auto max-w-4xl px-4 py-28 text-center sm:px-6 md:py-40">
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-crimson-foreground/80">
             Ahenema Kokoben • Ashanti Region
