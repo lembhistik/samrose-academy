@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import heroAsset from "@/assets/hero.asset.json";
+import mainCampusAsset from "@/assets/main-campus.asset.json";
+import earlyGradeAsset from "@/assets/early-grade-campus.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -160,6 +162,8 @@ function Home() {
                 title: "Early Grade Campus",
                 site: "Old Site",
                 scope: "Crèche & Early Learning",
+                image: earlyGradeAsset.url,
+                alt: "Early Grade Campus courtyard during a Samrose's Academy graduation ceremony",
                 highlights:
                   "Secure child-safe play zones, early reading nooks, and dedicated rest areas for young learners.",
               },
@@ -167,21 +171,31 @@ function Home() {
                 title: "Main Campus",
                 site: "New Site",
                 scope: "Kindergarten & Primary School",
+                image: mainCampusAsset.url,
+                alt: "Main Campus three-storey block with colourful pillars at Ahenema Kokoben",
                 highlights:
                   "Spacious classrooms, ICT media center, sports facilities, and science/learning labs.",
               },
             ].map((c) => (
               <article
                 key={c.title}
-                className="rounded-lg border border-border bg-card p-9 shadow-card"
+                className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
               >
-                <span className="inline-block rounded-full bg-navy px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-foreground">
-                  {c.site}
-                </span>
-                <h3 className="mt-5 font-serif text-2xl font-bold sm:text-3xl">{c.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-crimson">{c.scope}</p>
-                <div className="my-6 h-px w-16 bg-crimson" />
-                <p className="text-sm leading-relaxed text-muted-foreground">{c.highlights}</p>
+                <img
+                  src={c.image}
+                  alt={c.alt}
+                  loading="lazy"
+                  className="h-56 w-full object-cover sm:h-72"
+                />
+                <div className="p-9">
+                  <span className="inline-block rounded-full bg-navy px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-foreground">
+                    {c.site}
+                  </span>
+                  <h3 className="mt-5 font-serif text-2xl font-bold sm:text-3xl">{c.title}</h3>
+                  <p className="mt-2 text-sm font-semibold text-crimson">{c.scope}</p>
+                  <div className="my-6 h-px w-16 bg-crimson" />
+                  <p className="text-sm leading-relaxed text-muted-foreground">{c.highlights}</p>
+                </div>
               </article>
             ))}
           </div>
