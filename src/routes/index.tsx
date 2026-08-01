@@ -752,8 +752,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Admissions */}
-      <section id="admissions" className="bg-slate-soft py-20 md:py-28">
+      {/* Admissions Inquiry */}
+      <section id="admissions-inquiry" className="bg-slate-soft py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <div className="rounded-xl border border-border bg-card p-8 shadow-card sm:p-12">
             <div className="text-center">
