@@ -8,7 +8,7 @@ export const NAV: { label: string; to: string; hash?: string }[] = [
   { label: "Academics", to: "/academics" },
   { label: "Campuses", to: "/", hash: "campuses" },
   { label: "Admissions", to: "/admissions" },
-  { label: "Campus Life", to: "/", hash: "divisions" },
+  { label: "Our Gallery", to: "/", hash: "gallery" },
   { label: "About Us", to: "/about" },
 ];
 

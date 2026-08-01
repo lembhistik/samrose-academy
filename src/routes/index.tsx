@@ -202,6 +202,47 @@ function Home() {
         </div>
       </section>
 
+      {/* Gallery + activities */}
+      <section id="gallery" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 md:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+            Our Gallery
+          </span>
+          <h2 className="mt-4 font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
+            Co-Curricular &amp; Extracurricular Activities
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {ACTIVITIES.map((a) => (
+            <article
+              key={a.title}
+              className="rounded-lg border border-border bg-card p-7 shadow-card transition-shadow hover:shadow-elevated"
+            >
+              <span className="text-2xl" aria-hidden="true">
+                {a.icon}
+              </span>
+              <h3 className="mt-4 font-serif text-lg font-bold">{a.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {GALLERY.map((g) => (
+            <figure
+              key={g.src}
+              className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+            >
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Portal banner */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 md:py-24">
         <div className="relative overflow-hidden rounded-xl bg-navy p-10 shadow-elevated md:p-16">
