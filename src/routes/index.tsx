@@ -239,7 +239,10 @@ const ADMISSIONS_FAQS = [
   },
 ];
 
+function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [openStage, setOpenStage] = useState<string | null>("Crèche");
+  const [openFaq, setOpenFaq] = useState<string | null>("When does admission open for the new academic session?");
 
 
   return (
