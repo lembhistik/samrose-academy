@@ -3,6 +3,12 @@ import { useState } from "react";
 import heroAsset from "@/assets/hero.asset.json";
 import mainCampusAsset from "@/assets/main-campus.asset.json";
 import earlyGradeAsset from "@/assets/early-grade-campus.asset.json";
+import gallery1 from "@/assets/gallery-1.asset.json";
+import gallery2 from "@/assets/gallery-2.asset.json";
+import gallery3 from "@/assets/gallery-3.asset.json";
+import gallery4 from "@/assets/gallery-4.asset.json";
+import gallery5 from "@/assets/gallery-5.asset.json";
+import gallery6 from "@/assets/gallery-6.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -58,6 +64,39 @@ const DIVISIONS = [
     text: "Advanced academic focus, STEM foundation, and leadership preparation.",
   },
 ];
+
+const ACTIVITIES = [
+  {
+    icon: "🎨",
+    title: "Creative & Performing Arts",
+    text: "Music, drama, drawing, and cultural performance clubs to foster self-expression.",
+  },
+  {
+    icon: "⚽",
+    title: "Sports & Physical Education",
+    text: "Track events, soccer, and structured physical activities designed for coordination, health, and teamwork.",
+  },
+  {
+    icon: "💻",
+    title: "ICT & Innovation Club",
+    text: "Hands-on introductory tech and problem-solving projects for primary students.",
+  },
+  {
+    icon: "📖",
+    title: "Literacy & Debate Society",
+    text: "Building public speaking confidence, reading habits, and vocabulary from lower primary onwards.",
+  },
+];
+
+const GALLERY = [
+  { src: gallery1.url, alt: "Pupils on the grounds in front of the colourful Main Campus block" },
+  { src: gallery2.url, alt: "Pupils presenting a painted flower-tree artwork during a creative arts session" },
+  { src: gallery3.url, alt: "Young learners gathered around a table for a painting and craft activity" },
+  { src: gallery4.url, alt: "Pupils playing football on the school field beside the cafeteria" },
+  { src: gallery5.url, alt: "Primary pupils holding a handcrafted rooster sculpture outside the campus" },
+  { src: gallery6.url, alt: "KG Two class displaying their printmaking handprint project" },
+];
+
 
 
 function Home() {
