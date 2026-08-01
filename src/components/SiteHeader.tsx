@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
 
 export const NAV: { label: string; to: string; hash?: string }[] = [
+  { label: "Home", to: "/" },
   { label: "Academics", to: "/academics" },
   { label: "Campuses", to: "/", hash: "campuses" },
   { label: "Admissions", to: "/admissions" },
