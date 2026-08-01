@@ -98,9 +98,147 @@ const GALLERY = [
   { src: gallery6.url, alt: "KG Two class displaying their printmaking handprint project" },
 ];
 
+const ACADEMICS_PILLARS = [
+  {
+    title: "Integrated STEM & Digital Learning",
+    text: "We blend modern technology with standard curriculum practices, ensuring pupils build essential digital skills from an early age.",
+  },
+  {
+    title: "Small Class Sizes & Individual Attention",
+    text: "Our balanced teacher-to-student ratio guarantees that every child's unique learning pace is recognized and supported.",
+  },
+  {
+    title: "Continuous Assessment & Progress Tracking",
+    text: "Parents receive transparent, real-time insights into their child's academic journey via our integrated school management portal.",
+  },
+];
 
+const ACADEMICS_STAGES = [
+  {
+    name: "Crèche",
+    range: "Ages 3 Months – 2 Years",
+    site: "Old Site",
+    accent: "bg-crimson",
+    focus: "Early Sensory & Social Nurturing",
+    overview:
+      "A safe, loving home-away-from-home where early cognitive and motor skills are cultivated through structured play, music, storytelling, and individual care.",
+    pillars: [
+      "Sensory exploration and motor skill development",
+      "Language foundation through songs and interactive stories",
+      "Social interaction and emotional confidence building",
+    ],
+  },
+  {
+    name: "Nursery",
+    range: "Nursery 1 – Nursery 2",
+    site: "Old Site",
+    accent: "bg-navy",
+    focus: "Early Language Development & Guided Social Learning",
+    overview:
+      "Bridging the gap between crèche and formal schooling. Nursery focuses on building early vocabulary, fine motor coordination, social sharing, and structured classroom routines in a warm, encouraging environment.",
+    pillars: [
+      "Introduction to letters, sounds, and number recognition",
+      "Fine motor skill exercises (tracing, coloring, and building blocks)",
+      "Independent habits, etiquette, and group activity participation",
+    ],
+  },
+  {
+    name: "Kindergarten",
+    range: "KG 1 – KG 2",
+    site: "New Site",
+    accent: "bg-crimson",
+    focus: "Foundational Literacy & Creative Discovery",
+    overview:
+      "Transitioning young minds into structured learning through inquiry, phonics, and hands-on activities that foster independent thinking and effective communication.",
+    pillars: [
+      "Early Phonics, Reading & Expressive Writing",
+      "Numeracy, Shapes & Logic Puzzles",
+      "Creative Arts, Physical Education & Social Etiquette",
+    ],
+  },
+  {
+    name: "Lower Primary",
+    range: "Basic 1 – Basic 3",
+    site: "New Site",
+    accent: "bg-navy",
+    focus: "Core Competency & Active Literacy",
+    overview:
+      "Strengthening core academic subjects while encouraging pupils to ask questions, work collaboratively, and apply classroom lessons to real-world context.",
+    pillars: [
+      "Comprehensive Literacy & Public Speaking",
+      "Mental Mathematics & Quantitative Reasoning",
+      "Introductory Integrated Science & Environmental Studies",
+      "Basic ICT Skills & Digital Literacy",
+    ],
+  },
+  {
+    name: "Upper Primary",
+    range: "Basic 4 – Basic 6",
+    site: "New Site",
+    accent: "bg-crimson",
+    focus: "Advanced Academic Preparation & Leadership",
+    overview:
+      "Preparing students for secondary education through rigorous academic standards, analytical thinking, STEM projects, and personal leadership responsibility.",
+    pillars: [
+      "Advanced Mathematics & Applied Science",
+      "Creative Writing, Grammar & Literature",
+      "ICT, Coding Concepts & Problem Solving",
+      "Ghanaian Language, Citizenship & Social Studies",
+    ],
+  },
+];
 
-function Home() {
+const ADMISSIONS_STEPS = [
+  {
+    title: "Submit an Inquiry or Visit Us",
+    text: "Fill out our online admissions form or visit either of our campuses in Ahenema Kokoben (Old Site for Early Grade; New Site for Kindergarten & Primary) to pick up an application packet.",
+  },
+  {
+    title: "Campus Tour & Interaction",
+    text: "Schedule a guided tour to experience our facilities firsthand. For prospective pupils entering Kindergarten or Primary levels, a brief, friendly placement assessment is conducted to understand their learning needs.",
+  },
+  {
+    title: "Document Submission",
+    text: "Submit the completed application form alongside required supporting documents (see checklist below).",
+  },
+  {
+    title: "Offer of Admission & Enrollment",
+    text: "Upon successful review and assessment, an official admission letter and fee schedule will be issued. Secure your child's spot by completing the registration process.",
+  },
+];
+
+const ADMISSIONS_DOCUMENTS = [
+  "Completed Samrose’s Academy Application Form",
+  "Copy of Child’s Birth Certificate",
+  "Child’s Health & Immunization Record",
+  "2 Recent Passport-Sized Photographs of the Child",
+  "Previous Academic Reports / Terminal Reports (For Lower & Upper Primary applicants)",
+  "Passport-sized photograph of Parent / Guardian",
+];
+
+const ADMISSIONS_PLACEMENT = [
+  { level: "Crèche", age: "3 Months – 2 Years", campus: "Old Site (Early Grade Campus)" },
+  { level: "Nursery 1 & 2", age: "2 – 3+ Years", campus: "Old Site (Early Grade Campus)" },
+  { level: "Kindergarten (KG 1 & 2)", age: "4 – 5 Years", campus: "New Site (Main Campus)" },
+  { level: "Lower Primary (Basic 1 – 3)", age: "6 – 8 Years", campus: "New Site (Main Campus)" },
+  { level: "Upper Primary (Basic 4 – 6)", age: "9 – 11+ Years", campus: "New Site (Main Campus)" },
+];
+
+const ADMISSIONS_FAQS = [
+  {
+    q: "When does admission open for the new academic session?",
+    a: "Admissions are open year-round, with primary intake occurring at the start of each academic term. Early application is encouraged as spaces in our Crèche and Primary classes fill quickly.",
+  },
+  {
+    q: "Do you offer campus tours before applying?",
+    a: "Yes! We encourage parents to tour our Old Site and New Site facilities in Ahenema Kokoben to see our learning environment in action. Tours can be booked online or via phone.",
+  },
+  {
+    q: "Is there an assessment test for early grade pupils?",
+    a: "No formal academic testing is required for Crèche or Nursery. For Kindergarten and Primary applicants, we conduct an informal placement assessment to gauge their literacy and numeracy baseline.",
+  },
+];
+
   const [submitted, setSubmitted] = useState(false);
 
 
