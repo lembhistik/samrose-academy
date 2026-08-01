@@ -424,6 +424,306 @@ function Home() {
         </div>
       </section>
 
+      {/* Academics */}
+      <section id="academics" className="bg-slate-soft py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+            Academics
+          </span>
+          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+            Nurturing Excellence at Every Stage
+          </h2>
+          <h3 className="mt-6 font-serif text-xl font-bold text-navy sm:text-2xl">
+            Academic Excellence Built on Character &amp; Innovation
+          </h3>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            At Samrose&apos;s Academy, our academic framework is designed to spark curiosity from
+            early childhood through to upper primary excellence. Grounded in holistic development,
+            our curriculum combines rigorous foundational learning with practical problem-solving,
+            critical thinking, and character building across both our Early Grade (Old Site) and
+            Main (New Site) campuses in Ahenema Kokoben.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-5xl px-4 sm:px-6 md:mt-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+              Five Learning Stages
+            </span>
+            <h4 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+              A Journey Shaped Around How Children Grow
+            </h4>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Select a stage to view its focus, overview and key learning pillars.
+            </p>
+          </div>
+
+          <div className="mt-12 space-y-4">
+            {ACADEMICS_STAGES.map((s) => {
+              const isOpen = openStage === s.name;
+              return (
+                <article
+                  key={s.name}
+                  className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+                >
+                  <div className={`h-1 w-full ${s.accent}`} />
+                  <h3>
+                    <button
+                      type="button"
+                      onClick={() => setOpenStage(isOpen ? null : s.name)}
+                      aria-expanded={isOpen}
+                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-slate-soft sm:px-8"
+                    >
+                      <span className="min-w-0">
+                        <span className="block font-serif text-lg font-bold sm:text-xl">
+                          {s.name}{" "}
+                          <span className="font-sans text-sm font-medium text-muted-foreground">
+                            ({s.range})
+                          </span>
+                        </span>
+                        <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.2em] text-crimson">
+                          {s.site}
+                        </span>
+                      </span>
+                      <ChevronDown
+                        size={20}
+                        className={`shrink-0 text-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  </h3>
+                  {isOpen ? (
+                    <div className="border-t border-border px-6 py-7 sm:px-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                        Core Focus
+                      </p>
+                      <p className="mt-1 font-serif text-lg font-bold text-navy">{s.focus}</p>
+                      <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                        {s.overview}
+                      </p>
+                      <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                        Key Learning Pillars
+                      </p>
+                      <ul className="mt-3 space-y-2.5">
+                        {s.pillars.map((p) => (
+                          <li key={p} className="flex gap-3 text-sm leading-relaxed">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" />
+                            <span>{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8 md:mt-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+              Teaching Philosophy
+            </span>
+            <h4 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+              Academic Pillars &amp; Teaching Philosophy
+            </h4>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Three core commitments that shape every classroom at Samrose&apos;s Academy.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {ACADEMICS_PILLARS.map((p, i) => (
+              <article
+                key={p.title}
+                className="rounded-lg border border-border bg-card p-8 shadow-card"
+              >
+                <span className="font-serif text-3xl font-bold text-crimson/30">
+                  0{i + 1}
+                </span>
+                <h5 className="mt-4 font-serif text-lg font-bold">{p.title}</h5>
+                <div className="my-5 h-px w-12 bg-crimson" />
+                <p className="text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Admissions */}
+      <section id="admissions" className="bg-background py-20 md:py-28">
+        <div className="bg-navy py-16 text-navy-foreground md:py-24">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+              Admissions
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+              Begin Your Child&apos;s Journey at Samrose&apos;s Academy
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-navy-foreground/80">
+              Welcoming new pupils into our Crèche, Nursery, Kindergarten, and Primary programs
+              across our Ahenema Kokoben campuses.
+            </p>
+            <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+              <a
+                href="#documents"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-crimson px-6 py-3 text-sm font-semibold text-crimson-foreground shadow-card transition-opacity hover:opacity-90"
+              >
+                <Download size={17} /> Download Application Form (PDF)
+              </a>
+              <Link
+                to="/"
+                hash="admissions-inquiry"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-navy-foreground/30 px-6 py-3 text-sm font-semibold text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+              >
+                <CalendarDays size={17} /> Schedule a Campus Tour
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+              The Process
+            </span>
+            <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+              A Simple 4-Step Admissions Process
+            </h3>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {ADMISSIONS_STEPS.map((s, i) => (
+              <article
+                key={s.title}
+                className="rounded-lg border border-border bg-card p-7 shadow-card"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy font-serif text-lg font-bold text-navy-foreground">
+                  {i + 1}
+                </span>
+                <h4 className="mt-5 font-serif text-lg font-bold">{s.title}</h4>
+                <div className="my-4 h-px w-12 bg-crimson" />
+                <p className="text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div id="documents" className="scroll-mt-24 bg-slate-soft py-16 md:py-24">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <div className="text-center">
+              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+                Checklist
+              </span>
+              <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+                Required Application Documents
+              </h3>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Please come prepared with the following items.
+              </p>
+            </div>
+            <ul className="mt-10 space-y-3">
+              {ADMISSIONS_DOCUMENTS.map((d) => (
+                <li
+                  key={d}
+                  className="flex items-start gap-4 rounded-lg border border-border bg-card px-5 py-4 shadow-card"
+                >
+                  <CheckSquare size={20} className="mt-0.5 shrink-0 text-crimson" />
+                  <span className="text-sm leading-relaxed">{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+              Placement
+            </span>
+            <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+              Age Placement Guidelines
+            </h3>
+          </div>
+
+          <div className="mt-12 overflow-hidden rounded-lg border border-border shadow-card">
+            <table className="w-full border-collapse text-left">
+              <thead>
+                <tr className="bg-navy text-navy-foreground">
+                  <th className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.15em]">
+                    Level
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.15em]">
+                    Age Requirement
+                  </th>
+                  <th className="hidden px-5 py-4 text-xs font-semibold uppercase tracking-[0.15em] sm:table-cell">
+                    Campus Location
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {ADMISSIONS_PLACEMENT.map((row) => (
+                  <tr key={row.level} className="border-t border-border bg-card">
+                    <td className="px-5 py-4 font-serif text-sm font-bold text-navy">
+                      {row.level}
+                      <span className="mt-1 block font-sans text-xs font-normal text-muted-foreground sm:hidden">
+                        {row.campus}
+                      </span>
+                    </td>
+                    <td className="px-5 py-4 text-sm text-muted-foreground">{row.age}</td>
+                    <td className="hidden px-5 py-4 text-sm text-muted-foreground sm:table-cell">
+                      {row.campus}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="bg-slate-soft py-16 md:py-24">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="text-center">
+              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+                FAQ
+              </span>
+              <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl md:text-4xl">
+                Frequently Asked Questions
+              </h3>
+            </div>
+            <div className="mt-10 space-y-4">
+              {ADMISSIONS_FAQS.map((f) => {
+                const isOpen = openFaq === f.q;
+                return (
+                  <article
+                    key={f.q}
+                    className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+                  >
+                    <h3>
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? null : f.q)}
+                        aria-expanded={isOpen}
+                        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-serif text-base font-bold transition-colors hover:bg-slate-soft"
+                      >
+                        <span>{f.q}</span>
+                        <ChevronDown
+                          size={20}
+                          className={`shrink-0 text-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                    </h3>
+                    {isOpen ? (
+                      <p className="border-t border-border px-6 py-5 text-sm leading-relaxed text-muted-foreground">
+                        {f.a}
+                      </p>
+                    ) : null}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portal banner */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 md:py-24">
         <div className="relative overflow-hidden rounded-xl bg-navy p-10 shadow-elevated md:p-16">
