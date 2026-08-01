@@ -3,6 +3,12 @@ import { useState } from "react";
 import heroAsset from "@/assets/hero.asset.json";
 import mainCampusAsset from "@/assets/main-campus.asset.json";
 import earlyGradeAsset from "@/assets/early-grade-campus.asset.json";
+import gallery1 from "@/assets/gallery-1.asset.json";
+import gallery2 from "@/assets/gallery-2.asset.json";
+import gallery3 from "@/assets/gallery-3.asset.json";
+import gallery4 from "@/assets/gallery-4.asset.json";
+import gallery5 from "@/assets/gallery-5.asset.json";
+import gallery6 from "@/assets/gallery-6.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -58,6 +64,39 @@ const DIVISIONS = [
     text: "Advanced academic focus, STEM foundation, and leadership preparation.",
   },
 ];
+
+const ACTIVITIES = [
+  {
+    icon: "🎨",
+    title: "Creative & Performing Arts",
+    text: "Music, drama, drawing, and cultural performance clubs to foster self-expression.",
+  },
+  {
+    icon: "⚽",
+    title: "Sports & Physical Education",
+    text: "Track events, soccer, and structured physical activities designed for coordination, health, and teamwork.",
+  },
+  {
+    icon: "💻",
+    title: "ICT & Innovation Club",
+    text: "Hands-on introductory tech and problem-solving projects for primary students.",
+  },
+  {
+    icon: "📖",
+    title: "Literacy & Debate Society",
+    text: "Building public speaking confidence, reading habits, and vocabulary from lower primary onwards.",
+  },
+];
+
+const GALLERY = [
+  { src: gallery1.url, alt: "Pupils on the grounds in front of the colourful Main Campus block" },
+  { src: gallery2.url, alt: "Pupils presenting a painted flower-tree artwork during a creative arts session" },
+  { src: gallery3.url, alt: "Young learners gathered around a table for a painting and craft activity" },
+  { src: gallery4.url, alt: "Pupils playing football on the school field beside the cafeteria" },
+  { src: gallery5.url, alt: "Primary pupils holding a handcrafted rooster sculpture outside the campus" },
+  { src: gallery6.url, alt: "KG Two class displaying their printmaking handprint project" },
+];
+
 
 
 function Home() {
@@ -199,6 +238,47 @@ function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Gallery + activities */}
+      <section id="gallery" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 md:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-crimson">
+            Our Gallery
+          </span>
+          <h2 className="mt-4 font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
+            Co-Curricular &amp; Extracurricular Activities
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {ACTIVITIES.map((a) => (
+            <article
+              key={a.title}
+              className="rounded-lg border border-border bg-card p-7 shadow-card transition-shadow hover:shadow-elevated"
+            >
+              <span className="text-2xl" aria-hidden="true">
+                {a.icon}
+              </span>
+              <h3 className="mt-4 font-serif text-lg font-bold">{a.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {GALLERY.map((g) => (
+            <figure
+              key={g.src}
+              className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+            >
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </figure>
+          ))}
         </div>
       </section>
 
