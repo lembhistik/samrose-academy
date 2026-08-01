@@ -276,7 +276,7 @@ function Home() {
               Explore Divisions
             </a>
             <a
-              href="#admissions"
+              href="#admissions-inquiry"
               className="rounded-md border border-navy-foreground/70 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-navy-foreground transition-colors hover:bg-navy-foreground hover:text-navy"
             >
               Schedule a Visit
