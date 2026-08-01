@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { ChevronDown, CheckSquare, Download, CalendarDays } from "lucide-react";
 import heroAsset from "@/assets/hero.asset.json";
 import mainCampusAsset from "@/assets/main-campus.asset.json";
 import earlyGradeAsset from "@/assets/early-grade-campus.asset.json";
