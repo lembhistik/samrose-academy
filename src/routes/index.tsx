@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, CheckSquare, Download, CalendarDays } from "lucide-react";
-import heroAsset from "@/assets/hero.asset.json";
-import mainCampusAsset from "@/assets/main-campus.asset.json";
-import earlyGradeAsset from "@/assets/early-grade-campus.asset.json";
-import gallery1 from "@/assets/gallery-1.asset.json";
-import gallery2 from "@/assets/gallery-2.asset.json";
-import gallery3 from "@/assets/gallery-3.asset.json";
-import gallery4 from "@/assets/gallery-4.asset.json";
-import gallery5 from "@/assets/gallery-5.asset.json";
-import gallery6 from "@/assets/gallery-6.asset.json";
+import heroImg from "@/assets/hero.jpg";
+import mainCampusImg from "@/assets/main-campus.jpg";
+import earlyGradeImg from "@/assets/early-grade-campus.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -90,12 +90,12 @@ const ACTIVITIES = [
 ];
 
 const GALLERY = [
-  { src: gallery1.url, alt: "Pupils on the grounds in front of the colourful Main Campus block" },
-  { src: gallery2.url, alt: "Pupils presenting a painted flower-tree artwork during a creative arts session" },
-  { src: gallery3.url, alt: "Young learners gathered around a table for a painting and craft activity" },
-  { src: gallery4.url, alt: "Pupils playing football on the school field beside the cafeteria" },
-  { src: gallery5.url, alt: "Primary pupils holding a handcrafted rooster sculpture outside the campus" },
-  { src: gallery6.url, alt: "KG Two class displaying their printmaking handprint project" },
+  { src: gallery1, alt: "Pupils on the grounds in front of the colourful Main Campus block" },
+  { src: gallery2, alt: "Pupils presenting a painted flower-tree artwork during a creative arts session" },
+  { src: gallery3, alt: "Young learners gathered around a table for a painting and craft activity" },
+  { src: gallery4, alt: "Pupils playing football on the school field beside the cafeteria" },
+  { src: gallery5, alt: "Primary pupils holding a handcrafted rooster sculpture outside the campus" },
+  { src: gallery6, alt: "KG Two class displaying their printmaking handprint project" },
 ];
 
 const ACADEMICS_PILLARS = [
@@ -252,7 +252,7 @@ function Home() {
       {/* Hero */}
       <section id="top" className="relative isolate overflow-hidden">
         <img
-          src={heroAsset.url}
+          src={heroImg}
           alt="Pupils in red uniforms on the Samrose's Academy campus grounds"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -343,8 +343,8 @@ function Home() {
                 title: "Early Grade Campus",
                 site: "Old Site",
                 scope: "Crèche & Early Learning",
-                image: earlyGradeAsset.url,
-                alt: "Early Grade Campus courtyard during a Samrose's Academy graduation ceremony",
+                image: earlyGradeImg,
+                alt: "Young learners reading together on the Early Grade Campus",
                 highlights:
                   "Secure child-safe play zones, early reading nooks, and dedicated rest areas for young learners.",
               },
@@ -352,7 +352,7 @@ function Home() {
                 title: "Main Campus",
                 site: "New Site",
                 scope: "Kindergarten & Primary School",
-                image: mainCampusAsset.url,
+                image: mainCampusImg,
                 alt: "Main Campus three-storey block with colourful pillars at Ahenema Kokoben",
                 highlights:
                   "Spacious classrooms, ICT media center, sports facilities, and science/learning labs.",

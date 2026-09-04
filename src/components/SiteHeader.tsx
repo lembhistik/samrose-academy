@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/logo.asset.json";
+import logoImg from "@/assets/logo.jpg";
 
 export const NAV: { label: string; to: string; hash?: string }[] = [
   { label: "Home", to: "/" },
@@ -27,9 +27,9 @@ export function SiteHeader() {
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
-              src={logoAsset.url}
-              alt="Samrose's Academy crest"
-              className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
+              src={logoImg}
+              alt="Samrose's Academy logo"
+              className="h-12 w-12 shrink-0 rounded-full bg-white object-contain sm:h-14 sm:w-14"
             />
             <span className="min-w-0">
               <span className="block truncate font-serif text-base font-bold leading-tight tracking-tight sm:text-lg">

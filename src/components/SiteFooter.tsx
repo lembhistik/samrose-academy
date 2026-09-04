@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/logo.asset.json";
+import logoImg from "@/assets/logo.jpg";
 
 function FooterCol({ title, items }: { title: string; items: string[] }) {
   return (
@@ -28,9 +28,9 @@ export function SiteFooter() {
           <div>
             <div className="flex min-w-0 items-center gap-3">
               <img
-                src={logoAsset.url}
-                alt="Samrose's Academy crest"
-                className="h-14 w-14 shrink-0 rounded-full object-cover"
+                src={logoImg}
+                alt="Samrose's Academy logo"
+                className="h-14 w-14 shrink-0 rounded-full bg-white object-contain"
               />
               <span className="font-serif text-lg font-bold leading-tight">
                 SAMROSE&apos;S
